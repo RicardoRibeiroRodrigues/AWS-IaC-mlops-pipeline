@@ -9,7 +9,7 @@ for endpoint in active_endpoints:
     user_input = input("Do you want to delete this endpoint? (y/n): ")
 
     if user_input == 'y':
-        user_input = input(f"Are you sure you want to delete the endpoint {endpoint}? (y/n): ")
+        user_input = input(f"Are you sure you want to delete the endpoint {endpoint['EndpointName']}? (y/n): ")
         if user_input == 'y':
             try:
                 res = client.delete_endpoint(EndpointName=endpoint["EndpointName"])

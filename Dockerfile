@@ -12,11 +12,12 @@ RUN apk update && apk add --no-cache git
 
 # Install the AWS CLI
 RUN apk add --no-cache \
-        python3 \
-        py3-pip \
+    python3 \
+    py3-pip \
+    gcc \
     && pip3 install --upgrade pip \
     && pip3 install --no-cache-dir \
-        awscli boto3 \
+    awscli boto3 \
     && rm -rf /var/cache/apk/*
 
 
