@@ -28,3 +28,7 @@ git commit -m "Push deploy template"
 git remote add origin <O LINK DO SEU REPOSITÓRIO GITLAB DE DEPLOY AQUI>
 git push origin main
 ```
+
+## Referência:
+
+Esses templates foram pegos de [um dos samples da AWS](https://github.com/aws-samples/aws-mlops-pipelines-terraform), e comentados para facilitar o entendimento em algumas partes, e adaptados para o uso neste projeto.

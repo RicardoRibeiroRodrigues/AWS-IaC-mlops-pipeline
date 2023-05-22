@@ -6,7 +6,7 @@ phases:
       python: 3.8
     commands:
       - pip install --upgrade --force-reinstall . awscli
-      # TODO: adicionar aqui uma forma da fonte dos dados na s3 vir de um argumento ao invés de hardcoded.
+      # Tire a linha abaixo quando for utilizar outros dados, esses são só para exemplo de pipeline.
       - aws s3 cp s3://sagemaker-sample-files/datasets/tabular/synthetic/churn.txt s3://${ARTIFACT_BUCKET}/sagemaker/DEMO-xgboost-churn/data/RawData.csv 
   build:
     commands:

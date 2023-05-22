@@ -13,11 +13,15 @@ RUN apk update && apk add --no-cache git
 # Install the AWS CLI
 RUN apk add --no-cache \
     python3 \
-    py3-pip \
     gcc \
+    python3-dev \
+    py3-scipy \
+    py3-numpy \
+    py3-pandas \
+    py3-pip \
     && pip3 install --upgrade pip \
     && pip3 install --no-cache-dir \
-    awscli boto3 \
+    awscli boto3 sagemaker \
     && rm -rf /var/cache/apk/*
 
 
