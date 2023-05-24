@@ -40,12 +40,14 @@ Resources:
     Type: AWS::SageMaker::EndpointConfig
     Properties:
       ProductionVariants:
-        - InitialInstanceCount: !Ref EndpointInstanceCount
+         -  
+          VariantName: serverless-variant
+          ServerlessConfig: 
+            MaxConcurrency: 5
+            MemorySizeInMB: 2048
           InitialVariantWeight: 1.0
-          InstanceType: !Ref EndpointInstanceType
           ModelName: !GetAtt Model.ModelName
-          VariantName: AllTraffic
-
+  
   Endpoint:
     Type: AWS::SageMaker::Endpoint
     Properties:
