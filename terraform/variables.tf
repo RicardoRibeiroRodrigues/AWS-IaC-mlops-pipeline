@@ -1,7 +1,6 @@
 # Repository variables
-
 variable "repository_branch" {
-  description = "Repository branch to connect to"
+  description = "Repository branch to use in the pipeline"
   default     = "dev"
 }
 
@@ -30,16 +29,6 @@ variable "artifacts_bucket_name" {
   description = "S3 Bucket for storing artifacts"
   default     = "sagemaker-artifacts-pipeline-18345"
 }
-
-# variable "gitlab_build_repository_url" {
-#   default = "https://gitlab.com/ci-cd2701816/model-build-pipeline/-/tree/dev"
-#   description = "The URL of the GitLab repository to mirror from (PS: Set the branch you want to mirror from)"
-# }
-
-# variable "gitlab_deploy_repository_url" {
-#   default = "https://gitlab.com/ci-cd2701816/model-deploy-pipeline/-/tree/dev"
-#   description = "The URL of the GitLab repository to mirror from (PS: Set the branch you want to mirror from)"
-# }
 
 
 variable "project_name" {
