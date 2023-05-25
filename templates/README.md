@@ -4,6 +4,8 @@ Nessa pasta estão os templates básicos utilizados pela infraestrutura. Para ut
 
 Utilizando o git:
 
+`Supondo que você esteja no caminho /templates`
+
 1. Entre na pasta da pipeline de model build e inicialize o git nela:
 ```sh 
 cd modelbuild_pipeline & git init
