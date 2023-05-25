@@ -22,6 +22,8 @@ A description of some of the artifacts is provided below:
 ├── endpoint-config-template.yml
 ├── prod-config.json
 ├── staging-config.json
+├── setup.py
+├── fix_model_permission.py
 └── test
     ├── test.py
     └── test_buildspec.yml
