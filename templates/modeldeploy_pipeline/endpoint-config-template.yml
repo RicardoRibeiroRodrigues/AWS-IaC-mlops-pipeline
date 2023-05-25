@@ -51,3 +51,27 @@ Resources:
     Properties:
       EndpointName: !Sub ${SageMakerProjectName}-${StageName}
       EndpointConfigName: !GetAtt EndpointConfig.EndpointConfigName
+
+  ScalingTarget:
+      Type: "AWS::ApplicationAutoScaling::ScalableTarget"
+      Properties:
+        MaxCapacity: 5
+        MinCapacity: 1
+        ResourceId: !Sub endpoint/${Endpoint.EndpointName}/variant/AllTraffic
+        RoleARN: !Ref ModelExecutionRoleArn
+        ScalableDimension: sagemaker:variant:DesiredInstanceCount
+        ServiceNamespace: sagemaker
+
+  ScalingPolicy:
+    Type: "AWS::ApplicationAutoScaling::ScalingPolicy"
+    Properties:
+      PolicyName: SageMakerPipelineScalePolicy
+      PolicyType: TargetTrackingScaling
+      ScalingTargetId:
+        Ref: ScalingTarget
+      TargetTrackingScalingPolicyConfiguration:
+        TargetValue: 75.0
+        ScaleInCooldown: 600
+        ScaleOutCooldown: 30
+        PredefinedMetricSpecification:
+          PredefinedMetricType: SageMakerVariantInvocationsPerInstance
