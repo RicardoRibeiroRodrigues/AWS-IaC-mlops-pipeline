@@ -1,6 +1,6 @@
 import boto3
 
-region = 'us-east-1'
+region = input("Enter the region name (ex: us-east-1): ")
 client = boto3.client('cloudformation', region_name=region)
 
 stacks = client.list_stacks()

@@ -1,6 +1,7 @@
 import boto3
 
-client = boto3.client('sagemaker', region_name='us-east-1')
+region = input("Enter the region name (ex: us-east-1): ")
+client = boto3.client('sagemaker', region_name=region)
 
 active_endpoints = client.list_endpoints()["Endpoints"]
 
